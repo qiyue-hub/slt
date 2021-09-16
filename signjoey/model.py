@@ -110,7 +110,7 @@ class SignModel(nn.Module):
             gloss_probabilities = None
 
         if self.do_translation:
-            unroll_steps = txt_input.size(1)
+            unroll_steps = txt_input.size(1) # similar to T, word numbers
             decoder_outputs = self.decode(
                 encoder_output=encoder_output,
                 encoder_hidden=encoder_hidden,
