@@ -220,7 +220,7 @@ class SignModel(nn.Module):
 
         if self.do_translation:
             assert decoder_outputs is not None
-            word_outputs, _, _, _ = decoder_outputs
+            word_outputs, _, _, _ = decoder_outputs # decoder outputs (outputs, hidden, att_probs, att_vectors)
             # Calculate Translation Loss
             txt_log_probs = F.log_softmax(word_outputs, dim=-1)
             translation_loss = (
