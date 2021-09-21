@@ -407,7 +407,7 @@ def build_model(
 
     # build decoder and word embeddings
     if do_translation:
-        txt_embed: Union[Embeddings, None] = Embeddings(
+        txt_embed: Union[Embeddings, None] = Embeddings( # Union: txt_embed is supposed to be Embeddings or None
             **cfg["decoder"]["embeddings"],
             num_heads=cfg["decoder"]["num_heads"],
             vocab_size=len(txt_vocab),
