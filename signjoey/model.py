@@ -378,7 +378,7 @@ def build_model(
     )
 
     # build encoder
-    enc_dropout = cfg["encoder"].get("dropout", 0.0)
+    enc_dropout = cfg["encoder"].get("dropout", 0.0) # 0.0 is default
     enc_emb_dropout = cfg["encoder"]["embeddings"].get("dropout", enc_dropout)
     if cfg["encoder"].get("type", "recurrent") == "transformer":
         assert (
